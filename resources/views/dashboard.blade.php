@@ -11,6 +11,23 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
                 </div>
+                @if (session('success'))
+                    <div class="alert alert-success p-6 text-gray-900 dark:text-gray-100">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if (session('status'))
+                    <div class="alert alert-info p-6 text-gray-900 dark:text-gray-100">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+                @if (session('error'))
+                    <div class="alert alert-danger p-6 text-white border-2">
+                        {{ session('error') }}
+                    </div>
+                @endif
 
                 <h1 class="text-3xl font-bold text-center text-gray-100">To-Do List</h1>
 

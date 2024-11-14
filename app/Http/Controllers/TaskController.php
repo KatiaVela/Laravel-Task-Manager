@@ -101,11 +101,11 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
         if ($task->user_id !== auth()->id()) {
-            return redirect()->route('tasks.index');
+            return redirect()->route('dashboard');
         }
 
         $task->delete();
 
-        return redirect()->route('tasks.index');
+        return redirect()->route('dashboard');
     }
 }
